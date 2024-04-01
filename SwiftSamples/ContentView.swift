@@ -1,12 +1,11 @@
 //
-//  ContentView.swift
-//  SwiftSample
+//  ContentView2.swift
+//  SwiftSamples
 //
-//  Created by masazumi oeda on 2024/02/20.
+//  Created by masazumi oeda on 2024/03/25.
 //
 
 import SwiftUI
-
 enum SwiftTestViews: String{
   case topView
   case PropertyWarp         // Property Warppersのテスト
@@ -26,56 +25,93 @@ enum SwiftTestViews: String{
   case OptionalTypeView     // オプショナル型テストView
   case GridTestView         // グリッドテストView
   case NavigationView       // NavigationViewテスト
+  case JsonView             // JsonViewテスト
+  case ConfirmationDialogView // ConfirmationDialogテスト
+  case TapEvent             // タップテスト
   case TestEtcView          // その他のテストView
   case Test2View            // テスト2View
 }
 
-struct ContentView: View {
-  @State private var testView: SwiftTestViews = .topView
-  var menuColumns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
 
+struct ContentView2: View {
+  @State private var testView: SwiftTestViews = .topView
+  
   var body: some View {
     switch testView {
     case .topView:
-      Spacer()
-      ScrollView {
-        LazyVGrid(columns: menuColumns, spacing: 30) {
+      List {
+        Section {
           Text("Property Warppers")
-            .onTapGesture{
+            .onTapGesture {
               testView = .PropertyWarp
             }
-
           Text("Swift Argument")
-            .onTapGesture{
+            .onTapGesture {
               testView = .Argument
             }
           Text("ローカルストレージ")
-            .onTapGesture{
+            .onTapGesture {
               testView = .UserDefaults
             }
+          Text("Multi Thread")
+            .onTapGesture {
+              testView = .MultiThreadView
+            }
+          Text("Delegate")
+            .onTapGesture {
+              testView = .DelegateView
+            }
+          Text("TryCatch")
+            .onTapGesture {
+              testView = .TryCatchView
+            }
+          Text("ARC")
+            .onTapGesture {
+              testView = .ArcView
+            }
+          Text("OptionalType")
+            .onTapGesture {
+              testView = .OptionalTypeView
+            }
+          Text("Json")
+            .onTapGesture {
+              testView = .JsonView
+            }
+        } header: {
+          Text("Swiftプログラミング")
+        }
+        
+        Section {
+          Text("Swift Unique")
+            .onTapGesture{
+              testView = .SwiftUniqueView
+            }
+        } header: {
+          Text("Swiftのバグ")
+        }
+        
+        Section {
           Text("ModalView")
             .onTapGesture{
               testView = .ModalView
             }
+        } header: {
+          Text("Modal")
+        }
+        
+        Section {
           Text("Font")
             .onTapGesture{
               testView = .FontView
             }
-          Text("Multi Thread")
-            .onTapGesture{
-              testView = .MultiThreadView
-            }
+        } header: {
+          Text("UI Resource")
+        }
+        
+        Section {
           Text("Selector")
             .onTapGesture{
               testView = .SelectorView
-            }
-          Text("Delegate")
-            .onTapGesture{
-              testView = .DelegateView
-            }
-          Text("TryCatch")
-            .onTapGesture{
-              testView = .TryCatchView
             }
           Text("Slider")
             .onTapGesture{
@@ -85,30 +121,29 @@ struct ContentView: View {
             .onTapGesture{
               testView = .PickerView
             }
-          Text("Swift Unique")
+        } header: {
+          Text("Data Selector")
+        }
+        
+        Section {
+          Text("ConfirmationDialog View")
             .onTapGesture{
-              testView = .SwiftUniqueView
+              testView = .ConfirmationDialogView
             }
-          Text("Set Scroll Pos")
+        } header: {
+          Text("確認")
+        }
+        
+        Section {
+          Text("Tap")
             .onTapGesture{
-              testView = .SetScrollPosView
+              testView = .TapEvent
             }
-          Text("ARC")
-            .onTapGesture{
-              testView = .ArcView
-            }
-          Text("OptionalType")
-            .onTapGesture{
-              testView = .OptionalTypeView
-            }
-          Text("TestEtc")
-            .onTapGesture{
-              testView = .TestEtcView
-            }
-          Text("Test2 View")
-            .onTapGesture{
-              testView = .Test2View
-            }
+        } header: {
+          Text("イベント")
+        }
+
+        Section {
           Text("Grid View")
             .onTapGesture{
               testView = .GridTestView
@@ -117,9 +152,34 @@ struct ContentView: View {
             .onTapGesture{
               testView = .NavigationView
             }
+        } header: {
+          Text("表示")
+        }
+        
+        Section {
+          Text("Set Scroll Pos")
+            .onTapGesture{
+              testView = .SetScrollPosView
+            }
+        } header: {
+          Text("表示アクション")
+        }
+        
+        
+        
+        Section {
+          Text("TestEtc")
+            .onTapGesture{
+              testView = .TestEtcView
+            }
+          Text("Test2 View")
+            .onTapGesture{
+              testView = .Test2View
+            }
+        } header: {
+          Text("etc")
         }
       }
-
     case .PropertyWarp:
       PropertyWarpView(nextView: $testView)
     case .Argument:
@@ -132,7 +192,7 @@ struct ContentView: View {
       FontTestView(nextView: $testView)
     case .MultiThreadView:
       MultiThreadView(nextView: $testView)
-    case .SelectorView: 
+    case .SelectorView:
       SelectorView(nextView: $testView)
     case .DelegateView:
       DelegateView(nextView: $testView)
@@ -150,6 +210,8 @@ struct ContentView: View {
       ArcView(nextView: $testView)
     case .OptionalTypeView:
       OptionalTypeView(nextView: $testView)
+    case .TapEvent:
+      TapEventView(nextView: $testView)
     case .TestEtcView:
       TestEtcView(nextView: $testView)
     case .Test2View:
@@ -158,10 +220,11 @@ struct ContentView: View {
       GridView(nextView: $testView)
     case .NavigationView:
       NavigationViewTest(nextView: $testView)
+    case .JsonView:
+      JsonView(nextView: $testView)
+    case .ConfirmationDialogView:
+      ConfirmationDialogView(nextView: $testView)
     }
   }
 }
 
-#Preview {
-    ContentView()
-}

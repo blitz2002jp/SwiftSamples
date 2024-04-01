@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		580F9F282BBA949700DFC9D0 /* TapEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580F9F272BBA949700DFC9D0 /* TapEventView.swift */; };
 		58729E852BAA938600FB28BB /* SwiftSamplesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58729E842BAA938600FB28BB /* SwiftSamplesApp.swift */; };
 		58729E892BAA938800FB28BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58729E882BAA938800FB28BB /* Assets.xcassets */; };
 		58729E8C2BAA938800FB28BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58729E8B2BAA938800FB28BB /* Preview Assets.xcassets */; };
@@ -32,7 +33,9 @@
 		58729ED22BAA941300FB28BB /* ArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58729EBF2BAA941300FB28BB /* ArcView.swift */; };
 		58729ED32BAA941300FB28BB /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58729EC02BAA941300FB28BB /* PickerView.swift */; };
 		58729ED42BAA941300FB28BB /* TestEtcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58729EC12BAA941300FB28BB /* TestEtcView.swift */; };
-		58729ED62BAA943200FB28BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58729ED52BAA943200FB28BB /* ContentView.swift */; };
+		58ACC0DF2BB1466E00763353 /* ConfirmationDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACC0DE2BB1466E00763353 /* ConfirmationDialogView.swift */; };
+		58ACC0E12BB1492F00763353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACC0E02BB1492F00763353 /* ContentView.swift */; };
+		58B445DE2BAD142B00EBFC86 /* JsonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B445DD2BAD142B00EBFC86 /* JsonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		580F9F272BBA949700DFC9D0 /* TapEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapEventView.swift; sourceTree = "<group>"; };
 		58729E812BAA938600FB28BB /* SwiftSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58729E842BAA938600FB28BB /* SwiftSamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSamplesApp.swift; sourceTree = "<group>"; };
 		58729E882BAA938800FB28BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,8 +85,10 @@
 		58729EBF2BAA941300FB28BB /* ArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcView.swift; sourceTree = "<group>"; };
 		58729EC02BAA941300FB28BB /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		58729EC12BAA941300FB28BB /* TestEtcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEtcView.swift; sourceTree = "<group>"; };
-		58729ED52BAA943200FB28BB /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58729ED72BAA94EA00FB28BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		58ACC0DE2BB1466E00763353 /* ConfirmationDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialogView.swift; sourceTree = "<group>"; };
+		58ACC0E02BB1492F00763353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		58B445DD2BAD142B00EBFC86 /* JsonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +142,7 @@
 				58729ED72BAA94EA00FB28BB /* Info.plist */,
 				58729EAE2BAA93FE00FB28BB /* Modules */,
 				58729E842BAA938600FB28BB /* SwiftSamplesApp.swift */,
-				58729ED52BAA943200FB28BB /* ContentView.swift */,
+				58ACC0E02BB1492F00763353 /* ContentView.swift */,
 				58729E882BAA938800FB28BB /* Assets.xcassets */,
 				58729E8A2BAA938800FB28BB /* Preview Content */,
 			);
@@ -188,8 +194,11 @@
 				58729EB92BAA941300FB28BB /* SwiftUniqueSwiftUniqueView.swift */,
 				58729EB82BAA941300FB28BB /* Test2View.swift */,
 				58729EC12BAA941300FB28BB /* TestEtcView.swift */,
+				580F9F272BBA949700DFC9D0 /* TapEventView.swift */,
 				58729EBC2BAA941300FB28BB /* TryCatchView.swift */,
 				58729EB72BAA941300FB28BB /* UserDefaultsView.swift */,
+				58B445DD2BAD142B00EBFC86 /* JsonView.swift */,
+				58ACC0DE2BB1466E00763353 /* ConfirmationDialogView.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -326,7 +335,6 @@
 			files = (
 				58729ECE2BAA941300FB28BB /* SetScrollPosView.swift in Sources */,
 				58729ECC2BAA941300FB28BB /* SwiftUniqueSwiftUniqueView.swift in Sources */,
-				58729ED62BAA943200FB28BB /* ContentView.swift in Sources */,
 				58729EC22BAA941300FB28BB /* MultiThreadView.swift in Sources */,
 				58729ED02BAA941300FB28BB /* ModalMainView.swift in Sources */,
 				58729EC72BAA941300FB28BB /* SliderView.swift in Sources */,
@@ -341,10 +349,14 @@
 				58729EC52BAA941300FB28BB /* SelectorView.swift in Sources */,
 				58729EC82BAA941300FB28BB /* OptionalTypeView.swift in Sources */,
 				58729ECD2BAA941300FB28BB /* DelegateView.swift in Sources */,
+				58ACC0DF2BB1466E00763353 /* ConfirmationDialogView.swift in Sources */,
 				58729ECA2BAA941300FB28BB /* UserDefaultsView.swift in Sources */,
+				58B445DE2BAD142B00EBFC86 /* JsonView.swift in Sources */,
 				58729ED12BAA941300FB28BB /* GridView.swift in Sources */,
+				58ACC0E12BB1492F00763353 /* ContentView.swift in Sources */,
 				58729EC92BAA941300FB28BB /* PropertyWarpView.swift in Sources */,
 				58729ED22BAA941300FB28BB /* ArcView.swift in Sources */,
+				580F9F282BBA949700DFC9D0 /* TapEventView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

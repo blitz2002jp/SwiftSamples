@@ -1,5 +1,5 @@
 //
-//  TestEtcView.swift
+//  TapEventView.swift
 //  SwiftSample
 //
 //  Created by masazumi oeda on 2024/02/28.
@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct TestEtcView: View {
+struct TapEventView: View {
   @Binding var nextView: SwiftTestViews
+  
   @State var color1: Color = .black
   @State var color2: Color = .black
   @State var colorTogle1 = false
@@ -45,7 +46,10 @@ struct TestEtcView: View {
           self.color2 = .black
         }
       }
+      Spacer()
+      Button("Close") {
+        self.nextView = .topView
+      }
     }
   }
 }
-

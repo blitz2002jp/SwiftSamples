@@ -305,6 +305,7 @@ struct PublishedView: View {
   @Environment(\.dismiss) var dismiss
   @StateObject private var viewModel = PublishedViewModel()
   @ObservedObject private var utl = Utility()
+  @StateObject var publishedViewModel = PublishedViewModel2()
 
   
   var body: some View {
@@ -346,6 +347,54 @@ struct PublishedView: View {
       .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading).padding(.leading, 20)
 
       VStack{
+        Text("④ Published型プロパティ変更:")
+          .foregroundStyle(.blue)
+
+        HStack {
+          Text("@Publishedのプロパティ")
+          Button(action: {
+            print("tap1")
+          })
+          {
+            // 表示を切り替える
+            if self.publishedViewModel.publishProp == true {
+              Image(systemName: "sun.haze")
+                .imageScale(.large)
+            } else {
+              Image(systemName: "cloud")
+                .imageScale(.large)
+            }
+          }
+          Button("Tap") {
+            self.publishedViewModel.publishProp.toggle()
+          }
+        }
+        .padding(.bottom, 40)
+        
+
+        HStack {
+          Text("@Publishedではないプロパティ")
+          Button(action: {
+            print("tap2")
+          })
+          {
+            // 表示を切り替える
+            if self.publishedViewModel.noPublishProp == true {
+              Image(systemName: "sun.horizon.fill")
+                .imageScale(.large)
+            } else {
+              Image(systemName: "cloud.snow.fill")
+                .imageScale(.large)
+            }
+          }
+          Button("Tap") {
+            self.publishedViewModel.noPublishProp.toggle()
+          }
+        }
+      }
+      .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading).padding(.leading, 20)
+
+      VStack{
         Text("・①、③は,@Publishedでプロパティを定義することで自動更新される。")
         Text("・②は,Class型なので自動更新されない。１つの方法として強制的に再描画させられる。")
           //.multilineTextAlignment(.trailing)
@@ -372,3 +421,7 @@ class Utility: ObservableObject {
 }
 
 
+class PublishedViewModel2: ObservableObject {
+  @Published var publishProp = false
+  var noPublishProp = false
+}
