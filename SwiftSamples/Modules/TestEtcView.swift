@@ -8,44 +8,36 @@
 import SwiftUI
 
 struct TestEtcView: View {
-  @Binding var nextView: SwiftTestViews
-  @State var color1: Color = .black
-  @State var color2: Color = .black
-  @State var colorTogle1 = false
-  
-  var body: some View {
-    VStack {
-      HStack {
-        Text("このテキストのTapに反応")
-      }
-      .frame(width: 200, height: 200)
-      .background(RoundedRectangle(cornerRadius: 1)
-      .stroke(self.color1, lineWidth: 5))
-      .onTapGesture {
-        self.colorTogle1.toggle()
-        if self.colorTogle1 {
-          self.color1 = .blue
-        } else {
-          self.color1 = .black
+    var body: some View {
+        NavigationView {
+            VStack {
+                NavigationLink(destination: DetailView()) {
+                    Text("Go to Detail View")
+                }
+            }
+            .navigationTitle("Main View")
+            .navigationViewStyle(StackNavigationViewStyle())
         }
-      }
-      .padding(.bottom, 20)
-      HStack {
-        Text("枠内のTapに反応")
-      }
-      .frame(width: 200, height: 200)
-      .background(RoundedRectangle(cornerRadius: 40).stroke(self.color2, lineWidth: 5)
-      )
-      .contentShape(RoundedRectangle(cornerRadius: 40))
-      .onTapGesture {
-        self.colorTogle1.toggle()
-        if self.colorTogle1 {
-          self.color2 = .blue
-        } else {
-          self.color2 = .black
+        .onAppear(){
+          var a1:String? = "1111"
+          var a2:String?
+          let aaaa = a()
+          aaaa.f1(arg1: a1)
+          aaaa.f1(arg1: a2)
         }
-      }
     }
-  }
 }
 
+struct DetailView: View {
+    var body: some View {
+        Text("Detail View")
+            .navigationTitle("Detail")
+    }
+}
+
+
+class a{
+  func f1(arg1: String?){
+    print("aaaa:\(String(describing: arg1))")
+  }
+}

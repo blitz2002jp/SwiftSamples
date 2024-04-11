@@ -30,6 +30,9 @@ enum SwiftTestViews: String{
   case TapEvent             // タップテスト
   case TestEtcView          // その他のテストView
   case Test2View            // テスト2View
+  case MessaveBoxView       // メッセージボックス
+  case AnimationSfSymbolView  // SF Symbol アニメーション
+  case MP3FileView          // MP3 File View
 }
 
 
@@ -77,6 +80,10 @@ struct ContentView2: View {
             .onTapGesture {
               testView = .JsonView
             }
+          Text("MP3 File")
+            .onTapGesture {
+              testView = .MP3FileView
+            }
         } header: {
           Text("Swiftプログラミング")
         }
@@ -98,16 +105,7 @@ struct ContentView2: View {
         } header: {
           Text("Modal")
         }
-        
-        Section {
-          Text("Font")
-            .onTapGesture{
-              testView = .FontView
-            }
-        } header: {
-          Text("UI Resource")
-        }
-        
+
         Section {
           Text("Selector")
             .onTapGesture{
@@ -129,6 +127,10 @@ struct ContentView2: View {
           Text("ConfirmationDialog View")
             .onTapGesture{
               testView = .ConfirmationDialogView
+            }
+          Text("MessageBox")
+            .onTapGesture {
+              testView = .MessaveBoxView
             }
         } header: {
           Text("確認")
@@ -152,6 +154,17 @@ struct ContentView2: View {
             .onTapGesture{
               testView = .NavigationView
             }
+
+          Text("Font")
+            .onTapGesture{
+              testView = .FontView
+            }
+
+          Text("Animation SF Symbol")
+            .onTapGesture{
+              testView = .AnimationSfSymbolView
+            }
+
         } header: {
           Text("表示")
         }
@@ -213,7 +226,8 @@ struct ContentView2: View {
     case .TapEvent:
       TapEventView(nextView: $testView)
     case .TestEtcView:
-      TestEtcView(nextView: $testView)
+      EmptyView()
+//      TestEtcView(nextView: $testView)
     case .Test2View:
       Test2View(nextView: $testView)
     case .GridTestView:
@@ -224,6 +238,12 @@ struct ContentView2: View {
       JsonView(nextView: $testView)
     case .ConfirmationDialogView:
       ConfirmationDialogView(nextView: $testView)
+    case .MessaveBoxView:
+      MessageBox(nextView: $testView)
+    case .AnimationSfSymbolView:
+      AnimationSfSymbol(nextView: $testView)
+    case .MP3FileView:
+      MP3File(nextView: $testView)
     }
   }
 }
