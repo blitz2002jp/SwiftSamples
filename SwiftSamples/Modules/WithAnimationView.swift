@@ -11,9 +11,9 @@ struct WithAnimationView: View {
   @Binding var nextView: SwiftTestViews
   
   @StateObject private var images: AnimationImageWrapper = AnimationImageWrapper()
-  @State private var isPlaying = false
-  @State private var speedval = 2.5
-  @State private var effectFlg = false
+  @State private var isPlaying = false  // 再生中
+  @State private var speedval = 2.5     // Animation速度
+  @State private var effectFlg = false  // scaleEffect用
   
   var body: some View {
     VStack {
@@ -21,11 +21,14 @@ struct WithAnimationView: View {
         if item.isSelected {
           HStack {
             if self.isPlaying {
+              // 再生中イメージ表示
               Image(systemName:  "speaker.zzz")
                 .font(.system(size: 50))
                 .foregroundStyle(.orange)
+                // スケールエフェクト(effectFlgをwithAnimationでTogleされアニメーション表示される）
                 .scaleEffect(self.effectFlg ? 1 : 0.8)
             } else {
+              // 停止中イメージ表示
               Image(systemName: "speaker")
                 .font(.system(size: 50))
                 .foregroundStyle(.orange)
@@ -33,6 +36,7 @@ struct WithAnimationView: View {
           }
         } else {
           HStack {
+            // 未選択イメージ表示
             Image(systemName: "dog")
               .font(.system(size: 30))
               .foregroundStyle(.green)
@@ -52,6 +56,7 @@ struct WithAnimationView: View {
     HStack {
       Button(action: {
         if self.isPlaying {
+          // アニメーション停止
           self.isPlaying = false
         } else {
           // 選択されているものが無い場合、先頭を選択
@@ -59,6 +64,7 @@ struct WithAnimationView: View {
             self.images.animationImages[0].isSelected = true
           }
           
+          // アニメーション開始
           self.isPlaying = true
           self.speedval = 2.5
           withAnimation(.default.repeatForever().speed(self.speedval)) {
