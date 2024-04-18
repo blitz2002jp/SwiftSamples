@@ -27,11 +27,19 @@ struct WithAnimationView: View {
                 .foregroundStyle(.orange)
                 // スケールエフェクト(effectFlgをwithAnimationでTogleされアニメーション表示される）
                 .scaleEffect(self.effectFlg ? 1 : 0.8)
+                .onTapGesture {
+                  // アニメーション停止
+                  self.stopAnimation()
+                }
             } else {
               // 停止中イメージ表示
               Image(systemName: "speaker")
                 .font(.system(size: 50))
                 .foregroundStyle(.orange)
+                .onTapGesture {
+                  // アニメーション開始
+                  self.startAnimation()
+                }
             }
           }
         } else {
@@ -41,10 +49,17 @@ struct WithAnimationView: View {
               .font(.system(size: 30))
               .foregroundStyle(.green)
               .onTapGesture {
+                // アニメーション停止
+                self.stopAnimation()
+                
                 // 全選択解除して選択
                 images.animationImages.forEach { item in item.isSelected = false}
                 item.isSelected = true
-                self.isPlaying = false
+
+                // アニメーション開始
+                self.startAnimation()
+
+                // AnimationImageWrapperが自動的に再描画されない（クラスがネストしているから？）ので強制再描画
                 self.images.objectWillChange.send()
               }
           }
@@ -57,19 +72,15 @@ struct WithAnimationView: View {
       Button(action: {
         if self.isPlaying {
           // アニメーション停止
-          self.isPlaying = false
+          self.stopAnimation()
         } else {
           // 選択されているものが無い場合、先頭を選択
           if self.images.animationImages.first(where: {$0.isSelected}) == nil {
             self.images.animationImages[0].isSelected = true
           }
-          
+
           // アニメーション開始
-          self.isPlaying = true
-          self.speedval = 2.5
-          withAnimation(.default.repeatForever().speed(self.speedval)) {
-            self.effectFlg.toggle()
-          }
+          self.startAnimation()
         }
       }, label: {Image(systemName: self.isPlaying ? "pause.fill" : "play")})
     }
@@ -78,6 +89,20 @@ struct WithAnimationView: View {
     Button("Return"){
       nextView = .topView
     }
+  }
+  
+  // アニメーション開始
+  func startAnimation() {
+    self.isPlaying = true
+    self.speedval = 2.5
+    withAnimation(.default.repeatForever().speed(self.speedval)) {
+      self.effectFlg.toggle()
+    }
+  }
+  
+  // アニメーション停止
+  func stopAnimation() {
+    self.isPlaying = false
   }
 }
 
