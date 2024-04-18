@@ -149,6 +149,7 @@ struct MP3File: View {
       // ID3メタデータから必要な情報を抽出する
       var id3Tags: [String: Any] = [:]
       for item in metadata {
+        print(item.commonKey)
         if let key = item.commonKey?.rawValue, let value = item.value {
           id3Tags[key] = value
         }

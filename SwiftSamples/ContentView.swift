@@ -33,6 +33,10 @@ enum SwiftTestViews: String{
   case MessaveBoxView       // メッセージボックス
   case AnimationSfSymbolView  // SF Symbol アニメーション
   case MP3FileView          // MP3 File View
+  case ImageView            // Image View
+  case RedrawView           // Redraw View
+  case WithAnimationView    // WithAnimation View
+  case SwiftBlock           // Swift Block
 }
 
 
@@ -84,6 +88,10 @@ struct ContentView2: View {
             .onTapGesture {
               testView = .MP3FileView
             }
+          Text("Swift Block")
+            .onTapGesture {
+              testView = .SwiftBlock
+            }
         } header: {
           Text("Swiftプログラミング")
         }
@@ -105,7 +113,7 @@ struct ContentView2: View {
         } header: {
           Text("Modal")
         }
-
+        
         Section {
           Text("Selector")
             .onTapGesture{
@@ -144,7 +152,7 @@ struct ContentView2: View {
         } header: {
           Text("イベント")
         }
-
+        
         Section {
           Text("Grid View")
             .onTapGesture{
@@ -154,32 +162,38 @@ struct ContentView2: View {
             .onTapGesture{
               testView = .NavigationView
             }
-
+          
           Text("Font")
             .onTapGesture{
               testView = .FontView
             }
-
+          
+          Text("Image")
+            .onTapGesture{
+              testView = .ImageView
+            }
+          
+          Text("Redeaw")
+            .onTapGesture() {
+              testView = .RedrawView
+            }
+        } header: {
+          Text("表示")
+        }
+      
+        Section {
           Text("Animation SF Symbol")
             .onTapGesture{
               testView = .AnimationSfSymbolView
             }
-
-        } header: {
-          Text("表示")
-        }
-        
-        Section {
-          Text("Set Scroll Pos")
+          Text("WithAnimation")
             .onTapGesture{
-              testView = .SetScrollPosView
+              testView = .WithAnimationView
             }
         } header: {
-          Text("表示アクション")
+          Text("アニメーション")
         }
-        
-        
-        
+
         Section {
           Text("TestEtc")
             .onTapGesture{
@@ -226,8 +240,7 @@ struct ContentView2: View {
     case .TapEvent:
       TapEventView(nextView: $testView)
     case .TestEtcView:
-      EmptyView()
-//      TestEtcView(nextView: $testView)
+      TestEtcView(nextView: $testView)
     case .Test2View:
       Test2View(nextView: $testView)
     case .GridTestView:
@@ -241,9 +254,17 @@ struct ContentView2: View {
     case .MessaveBoxView:
       MessageBox(nextView: $testView)
     case .AnimationSfSymbolView:
-      AnimationSfSymbol(nextView: $testView)
+      AnimationView(nextView: $testView)
     case .MP3FileView:
       MP3File(nextView: $testView)
+    case .ImageView:
+      ImageView(nextView: $testView)
+    case .RedrawView:
+      ReDrawView(nextView: $testView)
+    case .WithAnimationView:
+      WithAnimationView(nextView: $testView)
+    case .SwiftBlock:
+      SwiftBlock(nextView: $testView)
     }
   }
 }
