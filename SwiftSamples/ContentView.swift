@@ -37,6 +37,11 @@ enum SwiftTestViews: String{
   case RedrawView           // Redraw View
   case WithAnimationView    // WithAnimation View
   case SwiftBlock           // Swift Block
+  case ApplicationStatus    // Applicationの状態判定
+  case EarphoneControlView  // イヤホンからの操作
+  case AppleBUG
+  case StackView             // VStac HStac ZStac
+  case GeometryReaderBugView  // GeometryReaderのバグ
 }
 
 
@@ -92,6 +97,14 @@ struct ContentView2: View {
             .onTapGesture {
               testView = .SwiftBlock
             }
+          Text("Application Status")
+            .onTapGesture {
+              testView = .ApplicationStatus
+            }
+          Text("Apple BUG")
+            .onTapGesture {
+              testView = .AppleBUG
+            }
         } header: {
           Text("Swiftプログラミング")
         }
@@ -100,6 +113,10 @@ struct ContentView2: View {
           Text("Swift Unique")
             .onTapGesture{
               testView = .SwiftUniqueView
+            }
+          Text("GeometryReader")
+            .onTapGesture{
+              testView = .GeometryReaderBugView
             }
         } header: {
           Text("Swiftのバグ")
@@ -149,6 +166,13 @@ struct ContentView2: View {
             .onTapGesture{
               testView = .TapEvent
             }
+          
+          Section {
+            Text("イヤホン操作")
+              .onTapGesture{
+                testView = .EarphoneControlView
+              }
+          }
         } header: {
           Text("イベント")
         }
@@ -177,10 +201,16 @@ struct ContentView2: View {
             .onTapGesture() {
               testView = .RedrawView
             }
+
+          Text("Stack")
+            .onTapGesture() {
+              testView = .StackView
+            }
+
         } header: {
           Text("表示")
         }
-      
+        
         Section {
           Text("Animation SF Symbol")
             .onTapGesture{
@@ -193,7 +223,7 @@ struct ContentView2: View {
         } header: {
           Text("アニメーション")
         }
-
+        
         Section {
           Text("TestEtc")
             .onTapGesture{
@@ -265,6 +295,17 @@ struct ContentView2: View {
       WithAnimationView(nextView: $testView)
     case .SwiftBlock:
       SwiftBlock(nextView: $testView)
+    case .ApplicationStatus:
+      ApplictionStatus(nextView: $testView)
+    case .EarphoneControlView:
+      EarphoneControlView(nextView: $testView)
+    case .AppleBUG:
+      AppleBUG(nextView: $testView)
+    case .StackView:
+//      StackView(nextView: $testView)
+      StackView()
+    case .GeometryReaderBugView:
+      GeometryReaderBugView()
     }
   }
 }

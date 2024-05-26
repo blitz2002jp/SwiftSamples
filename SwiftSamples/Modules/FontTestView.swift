@@ -36,6 +36,13 @@ struct FontTestView: View {
       Text("semibold").fontWeight(.semibold)
       Text("thin").fontWeight(.thin)
       Text("ultraLight").fontWeight(.ultraLight)
+
+      Spacer()
+      Text("使用可能フォント名")
+      List(UIFont.familyNames, id: \.self) { familyName in
+        Text(familyName).font(Font.custom(familyName, size: 30.0))
+      }
+
     }
     .padding(.top, 10)
 
