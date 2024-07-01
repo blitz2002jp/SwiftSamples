@@ -19,6 +19,7 @@
 		580F9F782BCA47E000DFC9D0 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580F9F772BCA47E000DFC9D0 /* ImageView.swift */; };
 		580F9F7D2BCE075E00DFC9D0 /* ReDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580F9F7C2BCE075E00DFC9D0 /* ReDrawView.swift */; };
 		581656132BF31FAE0038818F /* AppleBUG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581656122BF31FAE0038818F /* AppleBUG.swift */; };
+		582595F42C326D5A006A3F63 /* SelectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582595F32C326D5A006A3F63 /* SelectList.swift */; };
 		582CDE7C2BCE4EFC008C4980 /* WithAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CDE7B2BCE4EFC008C4980 /* WithAnimationView.swift */; };
 		582CDE7E2BCF5015008C4980 /* SwiftBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CDE7D2BCF5015008C4980 /* SwiftBlock.swift */; };
 		582CDE812BD21A10008C4980 /* artImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 582CDE7F2BD21A10008C4980 /* artImage.png */; };
@@ -26,6 +27,7 @@
 		582CDE862BD241FD008C4980 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 582CDE852BD241FD008C4980 /* image1.png */; };
 		582CDEF72BD49D01008C4980 /* ApplictionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CDEF62BD49D01008C4980 /* ApplictionStatus.swift */; };
 		582CDEF92BD4EBCA008C4980 /* EmptyArtWork.png in Resources */ = {isa = PBXBuildFile; fileRef = 582CDEF82BD4EBCA008C4980 /* EmptyArtWork.png */; };
+		584D50072C23E60800EF91CD /* StickyHeaderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D50062C23E60800EF91CD /* StickyHeaderContent.swift */; };
 		586C10062BD78C55000BAD9E /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586C10052BD78C55000BAD9E /* TempView.swift */; };
 		58729E852BAA938600FB28BB /* SwiftSamplesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58729E842BAA938600FB28BB /* SwiftSamplesApp.swift */; };
 		58729E892BAA938800FB28BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58729E882BAA938800FB28BB /* Assets.xcassets */; };
@@ -57,6 +59,7 @@
 		58ACC0DF2BB1466E00763353 /* ConfirmationDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACC0DE2BB1466E00763353 /* ConfirmationDialogView.swift */; };
 		58ACC0E12BB1492F00763353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACC0E02BB1492F00763353 /* ContentView.swift */; };
 		58B445DE2BAD142B00EBFC86 /* JsonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B445DD2BAD142B00EBFC86 /* JsonView.swift */; };
+		58DEA5042C27E5AE0089BA62 /* CustomModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DEA5032C27E5AE0089BA62 /* CustomModifierView.swift */; };
 		58F70D762BE5C475003F6B73 /* EarphoneControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F70D752BE5C475003F6B73 /* EarphoneControlView.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,7 @@
 		580F9F772BCA47E000DFC9D0 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		580F9F7C2BCE075E00DFC9D0 /* ReDrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReDrawView.swift; sourceTree = "<group>"; };
 		581656122BF31FAE0038818F /* AppleBUG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleBUG.swift; sourceTree = "<group>"; };
+		582595F32C326D5A006A3F63 /* SelectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectList.swift; sourceTree = "<group>"; };
 		582CDE7B2BCE4EFC008C4980 /* WithAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithAnimationView.swift; sourceTree = "<group>"; };
 		582CDE7D2BCF5015008C4980 /* SwiftBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBlock.swift; sourceTree = "<group>"; };
 		582CDE7F2BD21A10008C4980 /* artImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = artImage.png; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 		582CDE852BD241FD008C4980 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 		582CDEF62BD49D01008C4980 /* ApplictionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplictionStatus.swift; sourceTree = "<group>"; };
 		582CDEF82BD4EBCA008C4980 /* EmptyArtWork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmptyArtWork.png; sourceTree = "<group>"; };
+		584D50062C23E60800EF91CD /* StickyHeaderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderContent.swift; sourceTree = "<group>"; };
 		586C10052BD78C55000BAD9E /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
 		58729E812BAA938600FB28BB /* SwiftSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58729E842BAA938600FB28BB /* SwiftSamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSamplesApp.swift; sourceTree = "<group>"; };
@@ -132,6 +137,7 @@
 		58ACC0DE2BB1466E00763353 /* ConfirmationDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialogView.swift; sourceTree = "<group>"; };
 		58ACC0E02BB1492F00763353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58B445DD2BAD142B00EBFC86 /* JsonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonView.swift; sourceTree = "<group>"; };
+		58DEA5032C27E5AE0089BA62 /* CustomModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifierView.swift; sourceTree = "<group>"; };
 		58F70D752BE5C475003F6B73 /* EarphoneControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarphoneControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -289,6 +295,9 @@
 				581656122BF31FAE0038818F /* AppleBUG.swift */,
 				5899AE2A2C02B6C400AC075D /* StackView.swift */,
 				5899AE2C2C02F1C600AC075D /* GeometryReaderBugView.swift */,
+				584D50062C23E60800EF91CD /* StickyHeaderContent.swift */,
+				58DEA5032C27E5AE0089BA62 /* CustomModifierView.swift */,
+				582595F32C326D5A006A3F63 /* SelectList.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -438,6 +447,7 @@
 				582CDE7E2BCF5015008C4980 /* SwiftBlock.swift in Sources */,
 				582CDE7C2BCE4EFC008C4980 /* WithAnimationView.swift in Sources */,
 				58729ED02BAA941300FB28BB /* ModalMainView.swift in Sources */,
+				582595F42C326D5A006A3F63 /* SelectList.swift in Sources */,
 				58729EC72BAA941300FB28BB /* SliderView.swift in Sources */,
 				580F9F7D2BCE075E00DFC9D0 /* ReDrawView.swift in Sources */,
 				58729ECB2BAA941300FB28BB /* Test2View.swift in Sources */,
@@ -451,6 +461,7 @@
 				58729EC42BAA941300FB28BB /* FontTestView.swift in Sources */,
 				58729ED42BAA941300FB28BB /* TestEtcView.swift in Sources */,
 				58729E852BAA938600FB28BB /* SwiftSamplesApp.swift in Sources */,
+				584D50072C23E60800EF91CD /* StickyHeaderContent.swift in Sources */,
 				58729ECF2BAA941300FB28BB /* TryCatchView.swift in Sources */,
 				58729EC52BAA941300FB28BB /* SelectorView.swift in Sources */,
 				58729EC82BAA941300FB28BB /* OptionalTypeView.swift in Sources */,
@@ -462,6 +473,7 @@
 				582CDEF72BD49D01008C4980 /* ApplictionStatus.swift in Sources */,
 				58B445DE2BAD142B00EBFC86 /* JsonView.swift in Sources */,
 				58729ED12BAA941300FB28BB /* GridView.swift in Sources */,
+				58DEA5042C27E5AE0089BA62 /* CustomModifierView.swift in Sources */,
 				58ACC0E12BB1492F00763353 /* ContentView.swift in Sources */,
 				580F9F6D2BC676B900DFC9D0 /* MP3File.swift in Sources */,
 				58729EC92BAA941300FB28BB /* PropertyWarpView.swift in Sources */,

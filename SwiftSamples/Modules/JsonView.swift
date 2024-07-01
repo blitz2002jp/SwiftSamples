@@ -82,7 +82,7 @@ class JsonTestClassParent1: Codable {
   var no: Int
   var name: String
   var classType: String
-  
+
   init(no: Int, name: String, classType: String) {
     self.no = no
     self.name = name

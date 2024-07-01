@@ -42,11 +42,15 @@ enum SwiftTestViews: String{
   case AppleBUG
   case StackView             // VStac HStac ZStac
   case GeometryReaderBugView  // GeometryReaderのバグ
+  case StickyHeaderView  // スクロールによるヘッダー部の伸縮
+  case CustomModifierView // CustomModifierとアプリのサスペンド判定
+  case SelectListView // チェックボックス付きリスト
 }
 
 
 struct ContentView2: View {
   @State private var testView: SwiftTestViews = .topView
+  @Namespace static var namespace
   
   var body: some View {
     switch testView {
@@ -104,6 +108,10 @@ struct ContentView2: View {
           Text("Apple BUG")
             .onTapGesture {
               testView = .AppleBUG
+            }
+          Text("CustomModifier")
+            .onTapGesture {
+              testView = .CustomModifierView
             }
         } header: {
           Text("Swiftプログラミング")
@@ -206,6 +214,16 @@ struct ContentView2: View {
             .onTapGesture() {
               testView = .StackView
             }
+          
+          Text("ヘッダー部の伸縮")
+            .onTapGesture() {
+              testView = .StickyHeaderView
+            }
+
+          Text("チェックボックス付きリスト")
+            .onTapGesture() {
+              testView = .SelectListView
+            }
 
         } header: {
           Text("表示")
@@ -306,6 +324,12 @@ struct ContentView2: View {
       StackView()
     case .GeometryReaderBugView:
       GeometryReaderBugView()
+    case .StickyHeaderView:
+      StickyHeaderView()
+    case .CustomModifierView:
+      CustomModifierView()
+    case .SelectListView:
+      SelectList()
     }
   }
 }
